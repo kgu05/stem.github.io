@@ -15,8 +15,6 @@
 
 <h2> Gender Gap in STEM </h2>
 
-<h3> By Major </h3>
-
 
 <html>
   <head>
@@ -54,11 +52,88 @@
 
 
 
-<h3> By Geograph </h3>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('upcoming', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
 
-<p> Insert pic </p>
+      function drawRegionsMap() {
 
-<h2> Interesting Findings </h2>
+        var data = google.visualization.arrayToDataTable([
+        ['State', 'Percentage of Female Students Major STEM'],
+        ['US-AL' ,0.15316],
+        ['US-AK' ,0.20833],
+        ['Arizona' ,0.17017],
+        ['Arkansas' ,0.13953],
+        ['California' ,0.21416],
+        ['Colorado' ,0.20288],
+        ['Connecticut' ,0.19067],
+        ['Delaware' ,0.19331],
+        ['District of Columbia' ,0.15815],
+        ['Florida' ,0.17039],
+        ['Georgia' ,0.17572],
+        ['Hawaii' ,0.1745],
+        ['Idaho' ,0.15029],
+        ['Illinois' ,0.17856],
+        ['Indiana' ,0.1458],
+        ['Iowa' ,0.12621],
+        ['Kansas' ,0.133],
+        ['Kentucky' ,0.15115],
+        ['Louisiana' ,0.14847],
+        ['Maine' ,0.17764],
+        ['Maryland' ,0.21528],
+        ['Massachusetts' ,0.22833],
+        ['Michigan' ,0.17062],
+        ['Minnesota' ,0.15789],
+        ['Mississippi' ,0.15042],
+        ['Missouri' ,0.15539],
+        ['Montana' ,0.15899],
+        ['Nebraska' ,0.139],
+        ['Nevada' ,0.15146],
+        ['New Hampshire' ,0.18869],
+        ['New Jersey' ,0.21802],
+        ['New Mexico' ,0.18402],
+        ['New York' ,0.1835],
+        ['North Carolina' ,0.18731],
+        ['North Dakota' ,0.09939],
+        ['Ohio' ,0.16088],
+        ['Oklahoma' ,0.15282],
+        ['Oregon' ,0.1895],
+        ['Pennsylvania' ,0.18253],
+        ['Rhode Island' ,0.18052],
+        ['South Carolina' ,0.17543],
+        ['South Dakota' ,0.13906],
+        ['Tennessee' ,0.16139],
+        ['Texas' ,0.17531],
+        ['Utah' ,0.14445],
+        ['Vermont' ,0.19616],
+        ['Virginia' ,0.20936],
+        ['Washington' ,0.20095],
+        ['West Virginia' ,0.15271],
+        ['Wisconsin' ,0.14847],
+        ['Wyoming' ,0.1222]
+
+        ]);
+
+        var options = {region: 'US', resolution: 'provinces', title: 'Gender Gap in STEM by Region',};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 600px; height: 300px;"></div>
+  </body>
+</html>
+
+
+<h2> Factors Associated with Mjoring STEM </h2>
+
+<p> To identify factors mostly likely to be associated with women who study STEM, I conducted a logistic model and found some interesting findings.</p>
 
 <p> 1. Cultural influence: Female students with Asian parents are more likely to major in STEM. </p>
 
