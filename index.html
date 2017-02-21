@@ -7,7 +7,7 @@
 
 <h2> Data </h2>
 
-<p> * 2015 census data from Integrated Public Use Microdata Series (IPUMS) USA. </p>
+<p> * 2015 census data from the [Integrated Public Use Microdata Series (IPUMS) USA](https://usa.ipums.org/usa/index.shtml). </p>
 
 <p> * 3,147,005 individuals with information including household characteristics, demographics, education, and social and economic status. </p>
 
@@ -17,7 +17,42 @@
 
 <h3> By Major </h3>
 
-<p> Insert pic </p>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['STEM Majors', 'Male', 'Female'],
+          ['Math', 6550, 4744],
+          ['Engineering', 47145, 8258],
+          ['Science', 56906, 54667],
+          ['Technology', 6850, 1350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Gender Gap by Majors',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 600px; height: 300px;"></div>
+  </body>
+</html>
+
+
+
 
 <h3> By Geograph </h3>
 
